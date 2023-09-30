@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://bc6o06f3j884i"]
+
+[ext_resource type="Script" path="res://Scripts/PickupSpawner.gd" id="1_ulksk"]
+
+[node name="PickupSpawner" type="Node2D"]
+script = ExtResource("1_ulksk")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="SpawnedPickups" type="Node2D" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
