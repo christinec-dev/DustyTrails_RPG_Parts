@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=3 uid="uid://8brx2m1fqnnl"]
+
+[ext_resource type="Script" path="res://Scripts/Sky.gd" id="1_g7cs2"]
+
+[sub_resource type="Animation" id="Animation_ncq7n"]
+resource_name = "day_night_cycle"
+length = 24.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasModulate:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3, 6, 15, 19, 24),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.160784, 0.160784, 0.396078, 1), Color(0.4, 0.588235, 0.729412, 1), Color(0.886275, 0.890196, 0.545098, 1), Color(0.905882, 0.647059, 0.32549, 1), Color(0.494118, 0.294118, 0.407843, 1), Color(0.160784, 0.160784, 0.396078, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6ig6k"]
+_data = {
+"day_night_cycle": SubResource("Animation_ncq7n")
+}
+
+[node name="Sky" type="Node2D"]
+script = ExtResource("1_g7cs2")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_6ig6k")
+}
