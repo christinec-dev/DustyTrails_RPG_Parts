@@ -1,0 +1,88 @@
+[gd_scene load_steps=3 format=3 uid="uid://dba6pwoyd42ng"]
+
+[ext_resource type="Script" path="res://Scripts/MainScene.gd" id="1_1cya1"]
+[ext_resource type="FontFile" uid="uid://digbq0mlkbh3p" path="res://Assets/Font/Schrödinger.ttf" id="1_wkhlm"]
+
+[node name="MainScene" type="Node2D"]
+script = ExtResource("1_1cya1")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="UI"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.345098, 0.0980392, 0.160784, 1)
+
+[node name="New" type="Button" parent="UI/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -90.0
+offset_top = -70.0
+offset_right = 90.0
+offset_bottom = -42.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_wkhlm")
+theme_override_font_sizes/font_size = 20
+text = "NEW GAME"
+
+[node name="Load" type="Button" parent="UI/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -90.0
+offset_top = -35.0
+offset_right = 90.0
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_wkhlm")
+theme_override_font_sizes/font_size = 20
+text = "LOAD GAME"
+
+[node name="Settings" type="Button" parent="UI/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -90.0
+offset_right = 90.0
+offset_bottom = 28.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_wkhlm")
+theme_override_font_sizes/font_size = 20
+text = "SETTINGS"
+
+[node name="Quit" type="Button" parent="UI/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -90.0
+offset_top = 35.0
+offset_right = 90.0
+offset_bottom = 63.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_wkhlm")
+theme_override_font_sizes/font_size = 20
+text = "QUIT GAME"
+
+[connection signal="pressed" from="UI/ColorRect/New" to="." method="_on_new_pressed"]
+[connection signal="pressed" from="UI/ColorRect/Load" to="." method="_on_load_pressed"]
+[connection signal="pressed" from="UI/ColorRect/Quit" to="." method="_on_quit_pressed"]

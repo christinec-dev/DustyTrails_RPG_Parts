@@ -1,0 +1,101 @@
+[gd_scene load_steps=15 format=3 uid="uid://bwwe2vrj3w71e"]
+
+[ext_resource type="Script" path="res://Scripts/NPC.gd" id="1_tfg2h"]
+[ext_resource type="Texture2D" uid="uid://b1cgttgl8d3h3" path="res://Assets/Mobs/Coffin/Coffin Front Sheet.png" id="2_le7cs"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h6tip"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_81mrs"]
+atlas = ExtResource("2_le7cs")
+region = Rect2(0, 0, 74, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_22bpy"]
+atlas = ExtResource("2_le7cs")
+region = Rect2(74, 0, 74, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d6pav"]
+atlas = ExtResource("2_le7cs")
+region = Rect2(148, 0, 74, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_57dq0"]
+atlas = ExtResource("2_le7cs")
+region = Rect2(222, 0, 74, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ys5cd"]
+atlas = ExtResource("2_le7cs")
+region = Rect2(296, 0, 74, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_enig7"]
+atlas = ExtResource("2_le7cs")
+region = Rect2(370, 0, 74, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d3i3m"]
+atlas = ExtResource("2_le7cs")
+region = Rect2(0, 70, 74, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_142nx"]
+atlas = ExtResource("2_le7cs")
+region = Rect2(74, 70, 74, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tk2q4"]
+atlas = ExtResource("2_le7cs")
+region = Rect2(148, 70, 74, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pwmgx"]
+atlas = ExtResource("2_le7cs")
+region = Rect2(222, 70, 74, 70)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_emak4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_81mrs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_22bpy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d6pav")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_57dq0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ys5cd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_enig7")
+}],
+"loop": true,
+"name": &"idle_down",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d3i3m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_142nx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tk2q4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pwmgx")
+}],
+"loop": true,
+"name": &"talk_down",
+"speed": 5.0
+}]
+
+[node name="NPC_2" type="CharacterBody2D" groups=["NPC"]]
+process_mode = 3
+script = ExtResource("1_tfg2h")
+npc_name = "Dirty Steve"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_h6tip")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_emak4")
+animation = &"idle_down"
