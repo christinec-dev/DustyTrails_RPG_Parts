@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://blt5ij85cprqo"]
+
+[ext_resource type="Script" path="res://Scripts/QuestItem_2.gd" id="1_e0x8h"]
+[ext_resource type="Texture2D" uid="uid://6vg8dlfpbx6o" path="res://Assets/Icons/armor_01a.png" id="2_yuhxe"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p0rl1"]
+size = Vector2(15, 14)
+
+[node name="QuestItem2" type="Area2D"]
+script = ExtResource("1_e0x8h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_p0rl1")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_yuhxe")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
